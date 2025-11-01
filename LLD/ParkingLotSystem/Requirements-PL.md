@@ -15,6 +15,12 @@ remove vehicle
 4. Is parking automatic or manual - both could be possible
 5. How many parking lot a system can maintain - 1
 
+
+Non - functional requirement:
+- scalable system
+- handle concurrency
+
+
 Enities:
 
 - Vehicle
@@ -65,30 +71,23 @@ Connections
     
     
 
-- AutomaticParkingStrategy [Strategy Pattern]
+- ParkingStrategy [Strategy Pattern]
     func parkVehicle(vehicle) -> ParkingSlot
     
     
-- AutomaticParkingStrategyNearestSlot
-- AutomaticParkingStrategyFarthestSlot
-- AutomaticParkingStrategyRandomSlot
+- AutomaticParkingStrategyNearestSlot [Implement interface] - - - |> 
+- AutomaticParkingStrategyFarthestSlot [Implement interface] - - - |> 
+- AutomaticParkingStrategyRandomSlot [Implement interface] - - - |> 
 
 
-- ManualParkingStrategy 
+- ManualParkingStrategy: ParkingStrategy [Implement interface] - - - |> 
     func parkVehicle(vehicle, slot)
-
-
-- enum ParkingStragtegy 
-    automatic - strategy
-    manual
-    
-    
 
 
 
 - ParkingLotCenterSystem [FACADE]
     func addFloor(floor)
-    func selectParkingStragegy(ParkingStragtegy)
+    func selectParkingStragegy(ParkingStragtegy) [factory]
     func parkVehicle(vehicle)
     func removevehicle(vehicle)
     
