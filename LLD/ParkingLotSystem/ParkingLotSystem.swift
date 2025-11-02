@@ -8,14 +8,14 @@
 
 class ParkingLotSystem {
     
-    let parkingLot: ParkingLot
+    private let parkingLot: ParkingLot
     
     init(parkingLot: ParkingLot, parkingStrategy: ParkingStrategy) {
         self.parkingLot = parkingLot
         self.parkingStrategy = parkingStrategy
     }
     
-    var parkingStrategy: ParkingStrategy
+    private var parkingStrategy: ParkingStrategy
     
     func setParkingStrategy(_ strategy: ParkingStrategy) {
         self.parkingStrategy = strategy
@@ -29,6 +29,7 @@ class ParkingLotSystem {
         
         parkingStrategy.unparkVehicle(vehicle)
     }
+    
     
     
     

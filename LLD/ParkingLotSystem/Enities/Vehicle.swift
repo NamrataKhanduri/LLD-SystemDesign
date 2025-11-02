@@ -10,9 +10,9 @@ import Foundation
 struct Vehicle {
     
     let type: VehicleType
-    let id: Int
+    let id: UUID = UUID()
     let number: String
     let entryTime: Date
-    var exitTime: Date?
+    var exitTime: Date? = nil
 
 }
