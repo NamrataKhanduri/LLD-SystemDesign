@@ -12,9 +12,7 @@ class ParkingLotDemo {
     var parkingLotSystem: ParkingLotSystem!
     
     func run() throws {
-        
-        
-        
+                
         let floors = try parkingLotFloors()
         
         
@@ -53,8 +51,6 @@ class ParkingLotDemo {
         let layout: [[ParkingSlotType]] = [[slot1Type, slot2Type], [slot3Type, slot1Type]]
 
          
-        
-        
         let floor1: FloorProtocol = try Floor(row: 2, column: 2, floorNumber: 1, layout: layout)
         let floor2: FloorProtocol = try Floor(row: 2, column: 2, floorNumber: 1, layout: layout)
         let floor3: FloorProtocol = try Floor(row: 2, column: 2, floorNumber: 1, layout: layout)
