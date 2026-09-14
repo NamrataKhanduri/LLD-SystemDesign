@@ -3,6 +3,7 @@
 // LLD
 //
 
+/// tic tac game with size 3, 2 players are required
 class TicTacToeGameEngine {
     
     let boardsize  = 3
@@ -75,6 +76,7 @@ class TicTacToeGameEngine {
         winningStrategy.append(strategy)
     }
     
+    /// start app, after players are set
     func start() throws {
         if players.count < numberOfPlayers {
             throw GameError.PlayersMissing
@@ -83,12 +85,14 @@ class TicTacToeGameEngine {
         curenttPlayerIndex = 0
     }
     
+    /// Reset the whole app, including clearing players
     func reset() {
         players = []
         state = .waitingToStart
         curenttPlayerIndex = 0
         board.reset()
     }
+    
     private func isValidMove(_ move: Move) throws {
         if move.row >= 0 && move.row < boardsize && move.column >= 0 && move.column < boardsize {
             if board.cells[move.row][move.column].isFilled {
